@@ -65,6 +65,10 @@ CHANGE: None
   [] breaking point of your system and its failure mode
   [] determine if you system will recover without manual intervention after the stress test is over
 
+To push my system over its normal operations, to its limits, and beyond the breaking point, (don't overwhelm the system, it will turn into spike test), I started with the follow configuration:
+
+<img width="474" alt="Screen Shot 2021-03-26 at 6 16 55 PM" src="https://user-images.githubusercontent.com/5890251/112706133-76236300-8e5f-11eb-9d91-ef97f7b86ec8.png">
+
 
 TEST :
 
