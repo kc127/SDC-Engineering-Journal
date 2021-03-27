@@ -46,10 +46,3 @@ CHANGE: None
 
 TEST :
 
-##### Scaling: Production environment using loader.io (cloud based testing environment)
-
-TEST: 
-
-ANALYZE
-
-TEST 
