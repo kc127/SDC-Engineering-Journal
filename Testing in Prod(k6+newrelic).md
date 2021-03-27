@@ -50,6 +50,11 @@ ANALYZE:  I noticed that 99% of the requests completed below 1.5 seconds in k6. 
 
 <img width="1165" alt="Screen Shot 2021-03-26 at 6 00 35 PM" src="https://user-images.githubusercontent.com/5890251/112705832-ad911000-8e5d-11eb-93d7-36d983241ef9.png">
 
+At the peak, the response time is 
+
+<img width="765" alt="Screen Shot 2021-03-26 at 6 12 59 PM" src="https://user-images.githubusercontent.com/5890251/112706062-02815600-8e5f-11eb-9e9a-eedc831b513a.png">
+
+
 CHANGE: None
 
 
