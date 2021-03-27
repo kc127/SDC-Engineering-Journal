@@ -31,9 +31,8 @@ CHANGE: No change
 TEST: (Load-test.js) 100 users over 1 minutes, stay at 100 users for 10 minutes, ramp down to 0 users. 
       (ramp-up-test.js) 
       
-      ![Screen Shot 2021-03-26 at 5 25 13 PM](https://user-images.githubusercontent.com/5890251/112704535-3d33c000-8e58-11eb-88c6-df174395216d.png)
+![Screen Shot 2021-03-26 at 5 26 09 PM](https://user-images.githubusercontent.com/5890251/112704583-605e6f80-8e58-11eb-9ba7-d36d64e50692.png)
 
-      
 ANALYZE:  I noticed that 99% of the requests completed below 1.5 seconds. 
 
 CHANGE: None
