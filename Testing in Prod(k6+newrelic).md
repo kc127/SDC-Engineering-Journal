@@ -39,9 +39,17 @@ TEST: (Load-test.js) 100 users over 1 minutes, stay at 100 users for 10 minutes,
 
 (ramp-up.test.js)
 
-ANALYZE:  I noticed that 99% of the requests completed below 1.5 seconds. 
+ANALYZE:  I noticed that 99% of the requests completed below 1.5 seconds in k6. New relic is showing that my response time is 26 ms. Error rate was 0.0%, throughput was 6040 rpm)
+
+(new relic so far) 
+
+<img width="1174" alt="Screen Shot 2021-03-26 at 6 00 24 PM" src="https://user-images.githubusercontent.com/5890251/112705827-a9fd8900-8e5d-11eb-8c5e-1b520bb445c2.png">
+
+<img width="1165" alt="Screen Shot 2021-03-26 at 6 00 35 PM" src="https://user-images.githubusercontent.com/5890251/112705832-ad911000-8e5d-11eb-93d7-36d983241ef9.png">
 
 CHANGE: None
+
+
 
 ``` Stress Test : many different type of load testing, if your system crashes under a load test, it means that my load test has morphed into stress test. ```
   [] how your system behaves under extreme conditions
