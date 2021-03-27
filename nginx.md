@@ -1,3 +1,5 @@
+### Deploying NGINX based http/https Load Balancer with ec2
+
 #### Setting up NGINX as a Web Server and Reverse Proxy in AWS 
 
 ![Screen Shot 2021-03-26 at 11 34 25 PM](https://user-images.githubusercontent.com/5890251/112712321-0c6d7e00-8e8c-11eb-8305-9560476471a2.png)
