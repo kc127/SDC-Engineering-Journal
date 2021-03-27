@@ -13,10 +13,15 @@ On Step 7, ran into this error:
 
 ![Screen Shot 2021-03-26 at 11 49 26 PM](https://user-images.githubusercontent.com/5890251/112712637-14c6b880-8e8e-11eb-961b-fc95d8a12cb6.png)
 
+
 Solution: 
 
 1. ```sudo apt-get install openssl```
 2. ```sudo apt-get install libssl-dev```
+ 
+ or try this 
+ 
+ https://stackoverflow.com/questions/65520711/problem-installing-nginx-on-ubuntu-20-04-aws-ec2-node
 
 Source: https://www.nginx.com/blog/setting-up-nginx/
 
