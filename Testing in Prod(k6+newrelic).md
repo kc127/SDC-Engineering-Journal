@@ -72,7 +72,10 @@ TEST :
 
 This test increases the load by 100 users every 2 minutes and stays at this level for 5 minutes. Recovery stage is also included where the system is gradually decreasing the load to 0. 
 
-ANALYSZE: 
+![Screen Shot 2021-03-26 at 7 25 09 PM](https://user-images.githubusercontent.com/5890251/112707486-1df15e80-8e69-11eb-926f-36802b3706b7.png)
+
+
+ANALYSE: 
 
 CHANGE: 
 
