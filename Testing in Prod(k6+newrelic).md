@@ -67,8 +67,20 @@ CHANGE: None
 
 To push my system over its normal operations, to its limits, and beyond the breaking point, (don't overwhelm the system, it will turn into spike test), I started with the follow configuration:
 
+TEST :
 <img width="474" alt="Screen Shot 2021-03-26 at 6 16 55 PM" src="https://user-images.githubusercontent.com/5890251/112706133-76236300-8e5f-11eb-9d91-ef97f7b86ec8.png">
 
+This test increases the load by 100 users every 2 minutes and stays at this level for 5 minutes. Recovery stage is also included where the system is gradually decreasing the load to 0. 
 
-TEST :
+ANALYSZE: 
+
+CHANGE: 
+
+```Spike Testing: variarion of stress test, spikes to extreme load over a very short window of time , immediately overwhelms system with an extreme surge of load. You want to spike test to see if you system can perform under sudden surge of traffic, if your system will recover once the traffic has subsided```
+
+TEST:
+
+ANALYSE: 
+
+<img width="569" alt="Screen Shot 2021-03-26 at 6 22 17 PM" src="https://user-images.githubusercontent.com/5890251/112706230-34df8300-8e60-11eb-9dcf-48fe6aabc9c8.png">
 
