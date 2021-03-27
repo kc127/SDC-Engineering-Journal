@@ -34,7 +34,10 @@ TEST: (Load-test.js) 100 users over 1 minutes, stay at 100 users for 10 minutes,
 ![Screen Shot 2021-03-26 at 5 26 09 PM](https://user-images.githubusercontent.com/5890251/112704583-605e6f80-8e58-11eb-9ba7-d36d64e50692.png)
 
 (load-test.js)
+
 ![Screen Shot 2021-03-26 at 5 30 18 PM](https://user-images.githubusercontent.com/5890251/112704745-fb574980-8e58-11eb-8104-43339ce502f5.png)
+
+(ramp-up.test.js)
 
 ANALYZE:  I noticed that 99% of the requests completed below 1.5 seconds. 
 
