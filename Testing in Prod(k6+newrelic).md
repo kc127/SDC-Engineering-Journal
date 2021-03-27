@@ -39,6 +39,9 @@ TEST: (Load-test.js) 100 users over 1 minutes, stay at 100 users for 10 minutes,
 
 (ramp-up.test.js)
 
+<img width="844" alt="Screen Shot 2021-03-26 at 6 11 21 PM" src="https://user-images.githubusercontent.com/5890251/112706023-bdf5ba80-8e5e-11eb-9438-bea4c8d66a70.png">
+
+
 ANALYZE:  I noticed that 99% of the requests completed below 1.5 seconds in k6. New relic is showing that my response time is 26 ms. Error rate was 0.0%, throughput was 6040 rpm)
 
 (new relic so far) 
