@@ -1,3 +1,4 @@
+![Screen Shot 2021-03-26 at 5 30 18 PM](https://user-images.githubusercontent.com/5890251/112704745-fb574980-8e58-11eb-8104-43339ce502f5.png)
 #### What is app scaling? 
 - Scalability is the function of your app to manage an increasing number of customers, clients and/or users. 
 - Clients Per Second (all requests - get + post + put at the same time per second) vs RPS (one request per second)
