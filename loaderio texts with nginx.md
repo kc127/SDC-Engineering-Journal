@@ -15,9 +15,13 @@
 #### 2. Smoke Test (Front End => API-Server => Load Balancer => Reviews_API_1, ReviewsAPI_2 => MySQL)
 
 ```Response Time (latency): 24 ms```
+
 ```Error rate:52.0% ```
+
 ```Throughput:250 * 30 sec = 7500 requests over 30 seconds```
+
 ```7500 !== 120 ```
+
 ```req !== res```
 
 ![Screen Shot 2021-03-28 at 1 01 41 AM](https://user-images.githubusercontent.com/5890251/112746011-32b11d80-8f61-11eb-8a90-33bf2f0bd4e1.png)
