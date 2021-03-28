@@ -1,3 +1,29 @@
+### Metrics to Collect:
+
+![Screen Shot 2021-03-28 at 12 56 41 AM](https://user-images.githubusercontent.com/5890251/112745897-79524800-8f60-11eb-98c5-495405c7daf7.png)
+
+#### 1. Smoke Test with 250 clients per second 
+
+1. Results => error rate is 0%, Avg response Time 5 ms 
+
+![Screen Shot 2021-03-27 at 7 38 22 PM](https://user-images.githubusercontent.com/5890251/112740716-38443e80-8f34-11eb-99c5-7ca811930eb6.png)
+
+2. Repeat
+
+![Screen Shot 2021-03-27 at 9 00 29 PM](https://user-images.githubusercontent.com/5890251/112742009-8ca0eb80-8f3f-11eb-9fdf-1ffa84c25cf6.png)
+
+#### 2. Smoke Test (Front End + API-Server + Load Balancer + Reviews_API1 + ReviewsAPI2 + SQL)
+
+```Response Time (latency): 24 ms```
+```Error rate:52.0% ```
+```Throughput:250 * 30 sec = 7500 requests over 30 seconds```
+```7500 !== 120 ```
+```req !== res```
+
+![Screen Shot 2021-03-28 at 1 01 41 AM](https://user-images.githubusercontent.com/5890251/112746011-32b11d80-8f61-11eb-8a90-33bf2f0bd4e1.png)
+
+
+
 I used expression syntax to randomize the data loader sends to my app in requests.
 
 <img width="638" alt="Screen Shot 2021-03-27 at 7 17 48 PM" src="https://user-images.githubusercontent.com/5890251/112740347-20b78680-8f31-11eb-80f2-10d14753665a.png">
@@ -111,12 +137,3 @@ I used expression syntax to randomize the data loader sends to my app in request
 |     999902 | 5777383 |
 
 1000009,999902, 999903, 999904,999905, 999917, 999919, 999921, 999929, 999947, 999999, 1000006, 1000007, 999973
-#### Smoke Test with 250 clients per second 
-
-1. Results => error rate is 0%, Avg response Time 5 ms 
-
-![Screen Shot 2021-03-27 at 7 38 22 PM](https://user-images.githubusercontent.com/5890251/112740716-38443e80-8f34-11eb-99c5-7ca811930eb6.png)
-
-2. Repeat
-
-![Screen Shot 2021-03-27 at 9 00 29 PM](https://user-images.githubusercontent.com/5890251/112742009-8ca0eb80-8f3f-11eb-9fdf-1ffa84c25cf6.png)
