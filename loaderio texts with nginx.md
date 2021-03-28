@@ -4,10 +4,7 @@ I used expression syntax to randomize the data loader sends to my app in request
 
 #### Last 10 % of my dataset
 
-``` SELECT DISTINCT product_id, MAX(id) 
-FROM reviews 
-GROUP BY product_id 
-ORDER BY MAX(id) DESC, product_id LIMIT 100 ```
+```SELECT DISTINCT product_id, MAX(id) FROM reviews GROUP BY product_id ORDER BY MAX(id) DESC, product_id LIMIT 100```
 
 ------------+---------+
 | product_id | MAX(id) |
