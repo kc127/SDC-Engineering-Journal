@@ -33,7 +33,7 @@ Source: https://www.nginx.com/blog/setting-up-nginx/
 ![Screen Shot 2021-03-26 at 10 32 05 PM](https://user-images.githubusercontent.com/5890251/112712328-142d2280-8e8c-11eb-96ce-46a23461589b.png)
 
 ##### Once ngnix is install
-1. ```cd /etc/nginx/``
+1. ```cd /etc/nginx/```
 2. Locate nginx.conf and ```vim nginx.conf``` to edit it. 
 3. Add servers, loaderio.txt (to run loader.io test)
 
