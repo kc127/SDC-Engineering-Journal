@@ -38,6 +38,9 @@ Source: https://www.nginx.com/blog/setting-up-nginx/
 3. Add servers, loaderio.txt (to run loader.io test)
 
 ![Screen Shot 2021-03-27 at 7 11 23 PM](https://user-images.githubusercontent.com/5890251/112740250-3b3d3000-8f30-11eb-887c-84286d3beeb9.png)
+
+*Note, loaderio-xxx.txt first needs to be added in /home/public directory of your nginx ubuntu instance. Then, you need to reference this location in your nginx.conf file.  
+
 4. Load your nginx instance with relevant paths for example ```http://ec2-3-84-161-79.compute-1.amazonaws.com/reviews/9999``` (make sure to run your aws servers in the background).
 5. You are all set! 
 
