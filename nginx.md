@@ -32,8 +32,20 @@ Source: https://www.nginx.com/blog/setting-up-nginx/
 ![Screen Shot 2021-03-26 at 10 31 17 PM](https://user-images.githubusercontent.com/5890251/112712327-12fbf580-8e8c-11eb-8b46-39f849832f58.png)
 ![Screen Shot 2021-03-26 at 10 32 05 PM](https://user-images.githubusercontent.com/5890251/112712328-142d2280-8e8c-11eb-96ce-46a23461589b.png)
 
+##### Once ngnix is install
+1. ```cd /etc/nginx/``
+2. Locate nginx.conf and ```vim nginx.conf``` to edit it. 
+3. Add servers, loaderio.txt (to run loader.io test)
+
+![Screen Shot 2021-03-27 at 7 11 23 PM](https://user-images.githubusercontent.com/5890251/112740250-3b3d3000-8f30-11eb-887c-84286d3beeb9.png)
+4. Load your nginx instance with relevant paths for example ```http://ec2-3-84-161-79.compute-1.amazonaws.com/reviews/9999``` (make sure to run your aws servers in the background).
+5. You are all set! 
+
 #### Useful Commands 
-- ```nginx -s reload```
-- ```nginx -s stop```
-- ```nginx```
+- ```sudo nginx -s reload```
+- ```sudo nginx -s stop```
+- ```sudo nginx```
+- ```sudo vim nginx.conf```
+
+
 
