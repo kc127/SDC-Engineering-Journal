@@ -2,7 +2,7 @@
 
 ![Screen Shot 2021-03-28 at 12 56 41 AM](https://user-images.githubusercontent.com/5890251/112745897-79524800-8f60-11eb-98c5-495405c7daf7.png)
 
-#### 1. Smoke Test with 250 clients per second 
+#### 1. Smoke Test with 250 clients per second (API Server => Load Balancer => Reviews_API_1, Reviews_API_2 => MySQL)
 
 1. Results => error rate is 0%, Avg response Time 5 ms 
 
@@ -12,7 +12,7 @@
 
 ![Screen Shot 2021-03-27 at 9 00 29 PM](https://user-images.githubusercontent.com/5890251/112742009-8ca0eb80-8f3f-11eb-9fdf-1ffa84c25cf6.png)
 
-#### 2. Smoke Test (Front End + API-Server + Load Balancer + Reviews_API1 + ReviewsAPI2 + SQL)
+#### 2. Smoke Test (Front End => API-Server => Load Balancer => Reviews_API_1, ReviewsAPI_2 => MySQL)
 
 ```Response Time (latency): 24 ms```
 ```Error rate:52.0% ```
