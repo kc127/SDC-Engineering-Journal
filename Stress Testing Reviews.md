@@ -1,3 +1,6 @@
+ 
+API-Server -> Load Balancer -> Reviews_API_1, Reviews_API_2 -> MySQL
+
 ```
 mysql> SELECT MAX(id) FROM product;
 +---------+
@@ -93,8 +96,11 @@ ALTER table characteristics_reviews
   
 ### 2. Indexing
 ```ALTER TABLE photos ADD INDEX new_reviews_id (reviews_id);```
+
 ```ALTER TABLE characteristics_reviews ADD INDEX char_reviews_id (reviews_id);```
+
 ```ALTER TABLE characteristics_reviews ADD INDEX char_chars_id (characteristics_id);```
+
 ```ALTER TABLE characteristics_product ADD INDEX char_product_id (product_id);```
 
 
@@ -115,4 +121,4 @@ Effect after partitioning (same params as before)
  https://redis.io/topics/client-side-caching
  
  ![Screen Shot 2021-03-28 at 11 50 27 PM](https://user-images.githubusercontent.com/5890251/112797564-6dc65600-9020-11eb-85de-def2a31ade8b.png)
-API-Server -> Load Balancer -> Reviews_API_1, Reviews_API_2 -> MySQL
+
