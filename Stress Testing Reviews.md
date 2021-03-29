@@ -120,5 +120,16 @@ Effect after partitioning (same params as before)
  
  https://redis.io/topics/client-side-caching
  
+ ![Screen Shot 2021-03-29 at 12 02 40 AM](https://user-images.githubusercontent.com/5890251/112801143-65bce500-9025-11eb-8168-8458e8371204.png)
+
+ 
  ![Screen Shot 2021-03-28 at 11 50 27 PM](https://user-images.githubusercontent.com/5890251/112797564-6dc65600-9020-11eb-85de-def2a31ade8b.png)
+
+![Screen Shot 2021-03-29 at 12 24 22 AM](https://user-images.githubusercontent.com/5890251/112801050-48881680-9025-11eb-8dfa-25a4a258ee92.png)
+
+![Screen Shot 2021-03-29 at 12 14 05 AM](https://user-images.githubusercontent.com/5890251/112801058-4c1b9d80-9025-11eb-9d86-b80ab6c4d705.png)
+
+![Screen Shot 2021-03-29 at 12 06 10 AM](https://user-images.githubusercontent.com/5890251/112801102-589ff600-9025-11eb-9840-7e3f75d4de95.png)
+
+![Screen Shot 2021-03-29 at 12 01 08 AM](https://user-images.githubusercontent.com/5890251/112801189-6fdee380-9025-11eb-95f4-e87e185721a2.png)
 
