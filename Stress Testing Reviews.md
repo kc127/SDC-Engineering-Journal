@@ -1,5 +1,13 @@
 API-Server -> Load Balancer -> Reviews_API_1, Reviews_API_2 -> MySQL
 ```
+mysql> SELECT MAX(id) FROM product;
++---------+
+| MAX(id) |
++---------+
+| 1000011 |
++---------+
+1 row in set (0.01 sec)
+
 mysql> SELECT MAX(id) FROM photos;
 +---------+
 | MAX(id) |
