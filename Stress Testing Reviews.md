@@ -77,15 +77,37 @@ Possible Optimization: same as above
 
 ![Screen Shot 2021-03-28 at 6 09 39 PM](https://user-images.githubusercontent.com/5890251/112775800-c979ea80-8ff2-11eb-946f-e84bbec1edaa.png)
 
-#### Optimization: Data Partitioning 
-```ALTER table characteristics_reviews 
+#### Optimization: 
+
+### 1. Data Partitioning (couldn't figure out due to foreign key constraints)
+ALTER table characteristics_reviews 
   PARTITION BY HASH(id) 
-  PARTITIONS 4;```
+  PARTITIONS 4;
   
-  ```ALTER TABLE characteristics_reviews  PARTITION BY RANGE (id)
+  ALTER TABLE characteristics_reviews  PARTITION BY RANGE (id)
   (
     PARTITION p1 VALUES LESS THAN (5000,000),
     PARTITION p2 VALUES LESS THAN (10,000,000), 
     PARTITION p3 VALUES LESS THAN (15,000,000),  
     PARTITION p4 VALUES LESS THAN (20,000,000)
-  );```
+  );
+  
+### 2. Indexing
+ALTER TABLE photos ADD INDEX new_reviews_id (reviews_id);
+ALTER TABLE characteristics_reviews ADD INDEX char_reviews_id (reviews_id);
+ALTER TABLE characteristics_reviews ADD INDEX char_chars_id (characteristics_id);
+ALTER TABLE characteristics_product ADD INDEX char_product_id (product_id);
+
+
+<img width="661" alt="Screen Shot 2021-03-28 at 9 04 14 PM" src="https://user-images.githubusercontent.com/5890251/112785574-297b8b80-9009-11eb-9d90-7d5fab8b3db9.png">
+
+
+Effect after partitioning (same params as before)
+
+![Screen Shot 2021-03-28 at 9 06 24 PM](https://user-images.githubusercontent.com/5890251/112785697-78c1bc00-9009-11eb-8084-0994d56644da.png)
+
+### 3. Redis Caching
+
+ Source (https://livecodestream.dev/post/beginners-guide-to-redis-and-caching-with-nodejs/)
+ Redis Set-up on Ubuntu: https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04
+ 
