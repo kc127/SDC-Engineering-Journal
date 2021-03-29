@@ -12,3 +12,7 @@ https://www.mssqltips.com/sqlservertutorial/3207/make-sure-all-join-columns-are-
 - Figure out mysql bottleneck
 
 https://stackoverflow.com/questions/6555549/how-to-measure-mysql-bottlenecks
+
+- Get Cache Hit Ratio
+
+https://stackoverflow.com/questions/55117169/how-to-get-redis-hit-ratio
