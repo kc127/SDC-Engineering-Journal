@@ -111,7 +111,7 @@ Effect after partitioning (same params as before)
 
 ![Screen Shot 2021-03-28 at 9 06 24 PM](https://user-images.githubusercontent.com/5890251/112785697-78c1bc00-9009-11eb-8084-0994d56644da.png)
 
-### 3. Redis Caching
+### 3. Redis Caching - I used on-demand cache
 
  Source (https://livecodestream.dev/post/beginners-guide-to-redis-and-caching-with-nodejs/)
  Redis Set-up on Ubuntu: https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04
