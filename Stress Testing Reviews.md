@@ -1,4 +1,3 @@
-API-Server -> Load Balancer -> Reviews_API_1, Reviews_API_2 -> MySQL
 ```
 mysql> SELECT MAX(id) FROM product;
 +---------+
@@ -93,10 +92,10 @@ ALTER table characteristics_reviews
   );
   
 ### 2. Indexing
-ALTER TABLE photos ADD INDEX new_reviews_id (reviews_id);
-ALTER TABLE characteristics_reviews ADD INDEX char_reviews_id (reviews_id);
-ALTER TABLE characteristics_reviews ADD INDEX char_chars_id (characteristics_id);
-ALTER TABLE characteristics_product ADD INDEX char_product_id (product_id);
+```ALTER TABLE photos ADD INDEX new_reviews_id (reviews_id);```
+```ALTER TABLE characteristics_reviews ADD INDEX char_reviews_id (reviews_id);```
+```ALTER TABLE characteristics_reviews ADD INDEX char_chars_id (characteristics_id);```
+```ALTER TABLE characteristics_product ADD INDEX char_product_id (product_id);```
 
 
 <img width="661" alt="Screen Shot 2021-03-28 at 9 04 14 PM" src="https://user-images.githubusercontent.com/5890251/112785574-297b8b80-9009-11eb-9d90-7d5fab8b3db9.png">
@@ -111,3 +110,9 @@ Effect after partitioning (same params as before)
  Source (https://livecodestream.dev/post/beginners-guide-to-redis-and-caching-with-nodejs/)
  Redis Set-up on Ubuntu: https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04
  
+ I ended up using the following design. I hosted redis within the same EC2 instance as my Reviews_API servers. 
+ 
+ https://redis.io/topics/client-side-caching
+ 
+ ![Screen Shot 2021-03-28 at 11 50 27 PM](https://user-images.githubusercontent.com/5890251/112797564-6dc65600-9020-11eb-85de-def2a31ade8b.png)
+API-Server -> Load Balancer -> Reviews_API_1, Reviews_API_2 -> MySQL
