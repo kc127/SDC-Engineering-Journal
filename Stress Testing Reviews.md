@@ -1,13 +1,59 @@
-API-Server -> Load Balancer -> 
+API-Server -> Load Balancer -> Reviews_API_1, Reviews_API_2 -> MySQL
+
+mysql> SELECT MAX(id) FROM photos;
++---------+
+| MAX(id) |
++---------+
+| 2742932 |
++---------+
+1 row in set (0.01 sec)
+
+mysql> SELECT MAX(id) FROM reviews;
++---------+
+| MAX(id) |
++---------+
+| 5777993 |
++---------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MAX(id) FROM characteristics;
++---------+
+| MAX(id) |
++---------+
+| 3347582 |
++---------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MAX(id) FROM characteristics_product;
++---------+
+| MAX(id) |
++---------+
+| 3347492 |
++---------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MAX(id) FROM characteristics_reviews;
++----------+
+| MAX(id)  |
++----------+
+| 19337419 |
++----------+
 
 #### 1.Stress Test (500 clients per second over 1 minute => 500 * 60 = 30,000 Requests)
 
 
 Response Time (Latency): 3.5 s
+
 Error Rate: 15.9%
+
 Throughput(Total Successful Requests): 22,201 Requests
-Bottleneck: To find the bottleneck, I am using mysql query optimizer 
-Possible Optimization: Indexing Reviews table, De-normalization, Caching, increasing r
+
+Bottleneck: Based on AWS Cloud Watch report, CPU utilization of both of both microservice is pretty high, with high traffic as potential cause:
+
+![Screen Shot 2021-03-28 at 7 51 03 PM](https://user-images.githubusercontent.com/5890251/112781301-63e02b00-8fff-11eb-9461-a677739fa946.png)
+
+
+Possible Optimization: Indexing Reviews table, De-normalization/normalization, Caching, Data Partitioning
 
 ![Screen Shot 2021-03-28 at 6 09 39 PM](https://user-images.githubusercontent.com/5890251/112775491-e104a380-8ff1-11eb-921f-419aeec6b246.png)
 
