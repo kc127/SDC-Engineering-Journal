@@ -113,6 +113,11 @@ Effect after partitioning (same params as before)
 
 ### 3. Redis Caching - I used on-demand cache
 
+https://aws.amazon.com/redis/
+
+<img width="729" alt="Screen Shot 2021-03-29 at 1 21 29 AM" src="https://user-images.githubusercontent.com/5890251/112807776-20041a80-902d-11eb-99e6-a02c5889aec3.png">
+
+
  Source (https://livecodestream.dev/post/beginners-guide-to-redis-and-caching-with-nodejs/)
  Redis Set-up on Ubuntu: https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04
  
