@@ -1,5 +1,5 @@
 API-Server -> Load Balancer -> Reviews_API_1, Reviews_API_2 -> MySQL
-
+```
 mysql> SELECT MAX(id) FROM photos;
 +---------+
 | MAX(id) |
@@ -38,6 +38,8 @@ mysql> SELECT MAX(id) FROM characteristics_reviews;
 +----------+
 | 19337419 |
 +----------+
+```
+
 
 #### 1.Stress Test (500 clients per second over 1 minute => 500 * 60 = 30,000 Requests)
 
@@ -62,7 +64,20 @@ Possible Optimization: Indexing Reviews table, De-normalization/normalization, C
 Response Time (Latency): 6.1 second
 Error rate: 30%
 Throughput(Total Successful Requests): 22,000 Requests
-Bottleneck: 
-Possible Optimization: 
+Bottleneck: Same as above
+Possible Optimization: same as above
 
 ![Screen Shot 2021-03-28 at 6 09 39 PM](https://user-images.githubusercontent.com/5890251/112775800-c979ea80-8ff2-11eb-946f-e84bbec1edaa.png)
+
+#### Optimization: Data Partitioning 
+```ALTER table characteristics_reviews 
+  PARTITION BY HASH(id) 
+  PARTITIONS 4;```
+  
+  ```ALTER TABLE characteristics_reviews  PARTITION BY RANGE (id)
+  (
+    PARTITION p1 VALUES LESS THAN (5000,000),
+    PARTITION p2 VALUES LESS THAN (10,000,000), 
+    PARTITION p3 VALUES LESS THAN (15,000,000),  
+    PARTITION p4 VALUES LESS THAN (20,000,000)
+  );```
