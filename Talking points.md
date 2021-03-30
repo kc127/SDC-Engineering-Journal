@@ -1,5 +1,5 @@
 
-Hi, my name is Kanchan, I recently worked on a project where I was responsible for building the backend (server+database) for  the reviews microservice for a e-commerce website ~~retail web-portal that handles viewing and submission of reviews for the product selected. ~~
+Hi, my name is Kanchan, I recently worked on a project where I was responsible for building the backend (server+database) for  the reviews microservice for a e-commerce website ~~retail web-portal that handles viewing and submission of reviews for the product selected.
 
 #### interesting topics to talk about in order
 - horizontal scaling: nginx load balancing with least-conn strategy 
