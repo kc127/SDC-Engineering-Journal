@@ -1,3 +1,4 @@
+
 Hi, my name is Kanchan, I built the reviews microservice for a retail web-portal that handles viewing and submission of reviews for the product selected. 
 
 #### What does my microservice do: 
@@ -46,5 +47,8 @@ Now that I knew that my bottleneck was in the database level,
 - lazy-caching strategy with some logic in my server file to first re-direct the get request from client to cache and if it's a hit, then return that data and if it's a miss then get the data from the database and also update the cache in the process. 
 - 623ms with 8.4% error rate on throughput of 1000 clients over 1 minute 
 
-There is definitely room for optimization. Cache hit ration i
+![Screen Shot 2021-03-30 at 3 51 13 PM](https://user-images.githubusercontent.com/5890251/113066676-cbb58380-916f-11eb-8aab-875770bf8835.png)
+There is definitely room for optimization. Cache hit ration is pretty high
+- it's reactive vs caching by pre-fetching the most popular reviews and saving them 
 - I could make my caching more robust. 
+- 
