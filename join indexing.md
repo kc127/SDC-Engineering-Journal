@@ -1,6 +1,7 @@
 To Do
 
 - Make indexes for join table
+- find slow log query https://dba.stackexchange.com/questions/33/where-can-i-find-the-mysql-slow-log
 
 - Make indexes for foreign key
 
