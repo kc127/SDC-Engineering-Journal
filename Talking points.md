@@ -1,13 +1,19 @@
 
-Hi, my name is Kanchan, I built the reviews microservice for a retail web-portal that handles viewing and submission of reviews for the product selected. 
+Hi, my name is Kanchan, I recently worked on a project where I was responsible for building the backend (server+database) for  the reviews microservice for a e-commerce website ~~retail web-portal that handles viewing and submission of reviews for the product selected. ~~
+
+#### interesting topics to talk about in order
+- horizontal scaling: nginx load balancing with least-conn strategy 
+- separation of servers and database using docker 
+- indexing 
+- error rate is 8% don't talk about it 
 
 #### What does my microservice do: 
 - User should be able to write new reviews, 
 - read all the reviews, view the ratings  for the product they choose
 - sort it based on different categories such as helpfulness, relevant 
 
-#### How much data
-To store my data after cleaning using nodestream, I went with MySQL. I created about 6 tables to store my data using MySQL. 
+#### How much data and organization and what database
+To store my data after cleaning using nodestream, I went with a relational database, MySQL. I created about 6 tables to store my data and organized the data using foreign keys 
 - 1M Products with 5 M Reviews 
 - 2M Photos 
 - 1M Characteristics
@@ -28,10 +34,10 @@ Also cloudwatch report showed that my CPU utilization of MySQL+Reviews EC2 insta
 - so to identify the bottleneck, first I deployed MySQL and microservice separately. 
 - This showed that the CPU utilization was still around 30% for mySQL database. very high compared to my microservice instance. 
 
-#### First optimization: indexing and nested queries with inner join 
+#### First optimization: (Query Optimization) indexing and nested queries with inner join 
 Now that I knew that my bottleneck was in the database level, 
-- Therefore I added indexes on tables with join columns and and I wrote nested queries using inner join, 
-- With no indexes and without nested queries,  the response time was 5 seconds, response time went down to 3 seconds
+- Therefore I added indexes on tables with join columns and and using inner join, 
+- With no indexes and with just nested queries (nested queries: queries with callback),  the response time was 5 seconds, response time went down to 3 seconds
  
 #### Second Optimization: Load Balancer Optimization: 
 3 seconds is still too high and there was more room for optimization so I decided explore horizontal scaling 
@@ -40,7 +46,7 @@ Now that I knew that my bottleneck was in the database level,
 - Two microservice servers then interacted with one database EC2 instance. 
 - This reduced my response time went down by 2 seconds 
 
-#### Third Optimization: Redis Caching at the microservice layer with Time To Live of 600.
+#### Third Optimization: (maybe don't talk about it during an interview or make it more robust then talk about it) Redis Caching at the microservice layer with Time To Live of 600.
 - because redis is a in-memory data store, memory access is faster than disk centric databases.
 - schema-less key-value NoSQL type data-store
 - cache hit ratio of 85% which is still way to high. 
