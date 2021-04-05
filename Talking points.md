@@ -1,40 +1,42 @@
 #### Intro
-
 - Recently I worked on a project where I built the backend infrastructure for an e-commerce website similar to adidas. 
 - I inherited a legacy codebase with front end already built out.
 - My main task was to build the backend infrastructure for reviews microservice with primary focus on system design and scaling. 
 
 #### Technologies used
 - Technologies that I used were express, node and MySQL for database. 
-- I handled data that consisted of 1 Million Product, 5 Million Reviews with 2 Million Photos and around 20 Million characteristics meta data. 
+- I handled data that consisted of 1 Million Product ids, 5 Million Reviews with 2 Million Photos and around 20 Million characteristics meta data. 
 - The reason I went with MySQL is because my data is fairly structured with two many to many relationship between different entities, and MySQL provides an easy way to work with structured data. 
 
 ##### Goals 
-
-- My main goals were to get my database query time in local environment to be less than 50 ms. 
-- In the production environment, my goal was to get my app to handle throughput of 1000 RPS, response time or latency of 2000 ms under load and error rate of less than 1%.  
+- My overall goal was to get my application to handle throughput of 1000 RPS in the production environment, with response time or latency of 2000 ms under load and error rate of less than 1%.  
 
 #### Deployment 
-- After achieving my goal of 50 ms query time in the local environment, I decided to deploy my microservice and MySQL database onto the cloud using AWS EC2 instance. 
+-  After achieving my sub goal of query time of less than 50 ms in the local environment, I decided to deploy my microservice and MySQL database onto the cloud using AWS EC2 instance. 
 
 #### Observations and bottlenecks 
-I integrated new relic with k6 and loader.io and was able to determine that my response time was was pretty high (5 seconds) 
-Also cloudwatch report showed that my CPU utilization of MySQL+Reviews EC2 instance was around 30%, 
+Using loader.io integrated with new relic testing platform, I observed that my response time was was pretty high (5 seconds) for 500 RPS. 
+And AWS cloudwatch report showed that my CPU utilization of MySQL+Reviews EC2 instance was around 30%, 
 - so to identify the bottleneck, first I deployed MySQL and microservice separately. 
 - This showed that the CPU utilization was still around 30% for mySQL database. very high compared to my microservice instance. 
 
 #### First optimization: (Query Optimization) indexing and inner join (5 to 3 seconds)
 Now that I knew that my bottleneck was in the database level, 
-- Therefore I added indexes on tables with join columns and and using inner join, 
-- With no indexes and with just nested queries (nested queries: queries with callback),  the response time was 5 seconds, response time went down to 3 seconds
+- Just to provide some context, I had two GET requests. 
+- my core query searches the reviews table for all the reviews and photos table for all the photos related to that reviews
+- my second query searches three different tables to find characteristic name, value, and id for all the reviews of a specific product id. (first queries the join table of char and product to get the characteristic id for that product and using that information to find all the charactertistics name, value and id attached to all the reviews for that specific product )
+- I knew that I had room for optimization here, and I could use inner joins to make my query more efficient. 
+- I replaced my nested queries (multiple callbacks) with inner join. 
+- I also added indexes on tables with join columns (characteristics 
+- This reduced my query time to 3 seconds. 
  
 #### Second Optimization: Load Balancer Optimization: 
-3 seconds is still too high and there was more room for optimization so I decided explore horizontal scaling 
-- since horizontal scaling is often easier to scale dynamically by adding more servers to the existing pool. 
-- I placed a nginx Load Balancer in between the API-hub and my microservice, this helped to spread the traffic across two EC2 instances of my microservice s
+3 seconds is still too high and there was more room for optimization so I decided to scale my application horizontally using nginx load balancer. 
+- I added a proxy server and scaled up my microservices to two instances which then communicated with 1 Database EC2 instance. 
+- I placed a nginx Load Balancer in between the proxy server and my microservice instances using Least connection strategy. I explored ip hashing and round robin and my results were pretty consistent. 
 - Two microservice servers then interacted with one database EC2 instance. 
-- (This reduced my response time went down by 2 seconds)
-- 623ms with 8.4% error rate on throughput of 1000 clients over 1 minute 
+- The exciting part was that this reduced my repsonse time from 3 seconds to 900 ms on throughput of 1000RPS. 
+- (623ms with 8.4% error rate on throughput of 1000 clients over 1 minute)
 
 
 #### interesting topics to talk about in order
