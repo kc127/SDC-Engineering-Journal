@@ -1,5 +1,18 @@
+#### Intro
 
-Hi, my name is Kanchan, I recently worked on a project where I was responsible for building the backend (server+database) for  the reviews microservice for a e-commerce website ~~retail web-portal that handles viewing and submission of reviews for the product selected.
+- A project that I recently worked on that was really interesting was building a backend infrastructure for an e-commerce website. 
+- I inherited a legacy application with front end already built out.
+- My job was to build the backend infrastructure for reviews microservice in particular with primary focus on system design and scaling. 
+
+##### Goals 
+
+- My main goals were to load 26+ millions rows of data into MYSQL database with query time in local environment of less than 50 ms. 
+- In the production environment, get my app to handle  
+
+
+
+
+I recently worked on a project where I was responsible for building the backend (server+database) for  the reviews microservice for a e-commerce website ~~retail web-portal that handles viewing and submission of reviews for the product selected.
 
 #### interesting topics to talk about in order
 - horizontal scaling: nginx load balancing with least-conn strategy 
