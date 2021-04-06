@@ -1,3 +1,10 @@
+Feedback
+- optmized version, cutting some details might have been better 
+- lot of ums and ahhs 
+- keep your tone consistent 
+- why tinker with nginx, 
+
+
 #### Intro
 - Recently I worked on a project where I built the backend infrastructure for an e-commerce website similar to adidas. 
 - I inherited a legacy codebase with front end already built out.
